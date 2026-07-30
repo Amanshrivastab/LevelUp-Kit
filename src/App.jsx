@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import ProfileBadge from "./Components/profileBadge";
 import XPBar from "./Components/XPBar";
+import StreakCounter from "./Components/StreakCounter";
+import MathGame from "./Components/mathGame";
+
 
 function getLevelFromXP(XP) {
   return Math.floor(XP / 100) + 1;
@@ -67,9 +70,7 @@ export default function App() {
           {/* profile badge is here */}
           <ProfileBadge tier={tier} level={level} />
           {/* streak counter is here */}
-          <div className="border border-dashed border-gray-300 rounded-full px-4 py-2 text-sm text-gray-400">
-            streakCounter (streak: {streak})
-          </div>
+          <StreakCounter streak={streak} /> 
         </div>
 
         {/* xp bar will go here */}
@@ -77,9 +78,7 @@ export default function App() {
         
 
         {/* math function is here */}
-        <div className="border border-dashed border-gray-300 rounded-2xl px-4 py-10 text-sm text-gray-400 text-center">
-          mathGame (calls onCorrectAnswer when wired up)
-        </div>
+        <MathGame  onCorrectAnswer = {handleCorrectAnswer} />
       </div>
     </div>
   );
