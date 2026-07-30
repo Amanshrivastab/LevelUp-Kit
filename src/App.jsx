@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import ProfileBadge from "./Components/profileBadge";
+import XPBar from "./Components/XPBar";
 
 function getLevelFromXP(XP) {
   return Math.floor(XP / 100) + 1;
@@ -63,9 +65,7 @@ export default function App() {
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           {/* profile badge is here */}
-          <div className="border border-dashed border-gray-300 rounded-full px-4 py-2 text-sm text-gray-400">
-            profile badge (tier: {tier}, level {level})
-          </div>
+          <ProfileBadge tier={tier} level={level} />
           {/* streak counter is here */}
           <div className="border border-dashed border-gray-300 rounded-full px-4 py-2 text-sm text-gray-400">
             streakCounter (streak: {streak})
@@ -73,9 +73,8 @@ export default function App() {
         </div>
 
         {/* xp bar will go here */}
-        <div className="border border-dashed border-gray-300 rounded-lg px-4 py-6 text-sm text-gray-400 text-center">
-          XPBar (XP: {XP})
-        </div>
+          <XPBar  xp= {XP}/>
+        
 
         {/* math function is here */}
         <div className="border border-dashed border-gray-300 rounded-2xl px-4 py-10 text-sm text-gray-400 text-center">
