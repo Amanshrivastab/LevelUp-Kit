@@ -1,13 +1,7 @@
 import { useState } from "react";
+import { LEVELS,generateQuestion } from "../data/Questions";
 
 export default function MathGame(props){
-
-    const LEVELS = [
-        {id: 1 , label: "Addition" , operation: "+" },
-        { id:2 , label:"Substraction" , operation:"-"},
-        { id: 3 , label: "Multiplecation" , operation:"*"},
-        { id :4 , label: "Division" , operation:"/"}
-    ]
  
         
 
@@ -51,26 +45,6 @@ export default function MathGame(props){
         setUserAnswer("");
     }
 
-    function generateQuestion(operation){
-        const a = Math.floor(Math.random()*10) +1;
-        const b = Math.floor(Math.random()*10) +1;
-        let answer;
-        switch(operation){
-            case "+":
-                answer = a + b;
-                break;
-            case "-":
-                answer = a - b;
-                break;
-            case "*":
-                answer = a * b;
-                break;
-            case "/":
-                answer = a/b;
-                break;
-        }
-        return { a,b,answer};
-    }
 
     function handleNextLevel(){
        const currentIndex = LEVELS.findIndex((level) => level.id === selectedLevel.id);
