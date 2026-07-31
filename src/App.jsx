@@ -51,7 +51,7 @@ export default function App() {
         </div>
 
         {/* xp bar will go here */}
-          <XPBar  xp= {XP}/>
+          <XPBar  xp={XP} level={level}/>
         
 
         {/* math function is here */}
