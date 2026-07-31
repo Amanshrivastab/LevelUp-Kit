@@ -3,36 +3,12 @@ import ProfileBadge from "./Components/profileBadge";
 import XPBar from "./Components/XPBar";
 import StreakCounter from "./Components/StreakCounter";
 import MathGame from "./Components/mathGame";
+import { getLevelFromXP,getTierFromLevel } from "./Utils/XPUtils";
 
 
-function getLevelFromXP(XP) {
-  return Math.floor(XP / 100) + 1;
-}
 
-function getTierFromLevel(level) {
-  if (level >= 16) return "Diamond";
-  if (level >= 11) return "Platinum";
-  if (level >= 6) return "Gold";
-  return "Silver";
-}
 
-function getTodayString() {
-  return new Date().toISOString().split("T")[0];
-}
 
-function getYesterdayString() {
-  const d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().split("T")[0];
-}
-
-function calculateNewStreak(lastPlayedDate, currentStreak) {
-  const today = getTodayString();
-  const yesterday = getYesterdayString();
-  if (lastPlayedDate === today) return currentStreak;
-  if (lastPlayedDate === yesterday) return currentStreak + 1;
-  return 1;
-}
 
 export default function App() {
   const [XP, setXP] = useState(() => {
