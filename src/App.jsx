@@ -4,6 +4,7 @@ import XPBar from "./Components/XPBar";
 import StreakCounter from "./Components/StreakCounter";
 import MathGame from "./Components/mathGame";
 import { getLevelFromXP,getTierFromLevel } from "./Utils/XPUtils";
+import { getTodayString,getYesterdayString,calculateNewStreak } from "./Utils/StreakUtils";
 
 
 
