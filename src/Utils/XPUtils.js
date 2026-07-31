@@ -3,8 +3,8 @@ export function getLevelFromXP(XP) {
 }
 
  export function getTierFromLevel(level) {
-  if (level >= 16) return "Diamond";
-  if (level >= 11) return "Platinum";
-  if (level >= 6) return "Gold";
+  if (level >= 12) return "Diamond";
+  if (level >= 8) return "Platinum";
+  if (level >= 4) return "Gold";
   return "Silver";
 }

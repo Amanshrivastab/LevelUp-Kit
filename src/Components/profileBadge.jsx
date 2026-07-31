@@ -7,8 +7,11 @@ export default function ProfileBadge(props) {
   };
 
   return (
-    <div className={`px-4 py-2 rounded-full inline-block ${tierColors[props.tier]}`}>
-      {props.tier} — Level {props.level}
+    <div className={`px-4 py-2 rounded-full inline-flex items-center gap-2 font-medium ${tierColors[props.tier]}`}>
+      <span>{props.tier}</span>
+      <span className="text-xs bg-black/10 px-2 py-0.5 rounded-full">
+        Lv {props.level}
+      </span>
     </div>
   );
 }
